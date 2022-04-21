@@ -87,6 +87,6 @@ git push heroku master
 ```batch
 heroku login
 git add .
-git commit -am “this is just a message. you can write whatever you want in here.”
+git commit -am “added facts. you can write whatever you want in here.”
 git push heroku master
 ```
