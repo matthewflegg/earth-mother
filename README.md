@@ -27,7 +27,20 @@ To host this bot, you need to go to the **[discord developer portal](https://dis
 10. Go to the left of the screen and click `Bot` again. Under its username, you should see a `Reset Token` button. Click it.
 11. Click `Copy`, and **keep it somewhere safe** as you'll need it later. This is sort of like your bot's password, so keep it private.
 
-### Step 2 - Hosting the bot
+### Step 2 - Add your token
+
+1. You should have your token from **steps 10 and 11**.
+2. Go to the bot's main directory. For reference, this should have a file called `__main__.py`, and `cogs`, `files`, & `images` folders.
+3. Create a file called `.env`, and open it in notepad.
+4. Add the following to the file, replacing `YOUR_TOKEN_HERE` with the token from **steps 10 and 11**.
+
+```
+TOKEN=YOUR_TOKEN_HERE
+```
+
+5. Save the file and exit.
+
+### Step 3 - Hosting the bot
 There are many different options for hosting. I recommend **[Heroku](https://heroku.com/)**, as it's free and easy to use. You choose to pay for premium features if needed.
 
 1. Create an account on **[Heroku](https://heroku.com/)**.
@@ -67,8 +80,9 @@ git push heroku master
 
 ## Changing or adding facts
 
-1. Go to the folder where your bot is on your computer, and add facts to the sheet. DO NOT change the first row.
-2. Open **cmd** in the main folder for the bot and run the following commands:
+1. Go to the folder where your bot is on your computer, and open the `files` folder.
+2. Open `facts.xlsx`, and add facts to the sheet. DO NOT change the first row, or change the name of the file. Only add/remove facts.
+3. Open **cmd** in the main folder for the bot and run the following commands:
 
 ```batch
 heroku login
