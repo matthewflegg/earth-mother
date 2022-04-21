@@ -1,7 +1,6 @@
 import discord
 import datetime
 import itertools
-import random
 import pandas as pd
 from discord.ext import commands
 
