@@ -1,5 +1,6 @@
 import discord
 import datetime
+import itertools
 import random
 import pandas as pd
 from discord.ext import commands
@@ -17,8 +18,7 @@ class Greetings(commands.Cog):
 
         self.client = client
         self.channel = None
-        self.facts = facts.iloc[:, 0].to_list()
-        self.previous_fact = ""
+        self.facts = itertools.cycle(facts.iloc[:, 0].to_list())
 
     @commands.command()
     @commands.has_permissions(manage_channels=True)
@@ -50,13 +50,9 @@ class Greetings(commands.Cog):
         if not self.channel:
             return
 
-        choosable_facts = [fact for fact in self.facts if fact != self.previous_fact]
-        chosen_fact = random.choice(choosable_facts)
-        self.previous_fact = chosen_fact
-
         embed = discord.Embed(
             title=f"👋🏻 Welcome, {member.display_name}!",
-            description=chosen_fact,
+            description=next(self.facts),
             timestamp=datetime.datetime.utcnow()
         )
 

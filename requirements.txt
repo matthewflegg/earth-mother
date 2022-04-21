@@ -4,9 +4,11 @@ attrs==21.4.0
 chardet==4.0.0
 discord==1.7.3
 discord.py==1.7.3
+et-xmlfile==1.1.0
 idna==3.3
 multidict==6.0.2
 numpy==1.22.3
+openpyxl==3.0.9
 pandas==1.4.2
 python-dateutil==2.8.2
 python-dotenv==0.20.0
